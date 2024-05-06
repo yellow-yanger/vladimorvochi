@@ -179,7 +179,7 @@ body {
 .qmTense {
     text-align: center;
     font-size: 100px;
-    height: 200px;
+    height: 100px;
     width: 100%;
     background-color: rgb(3, 255, 116);
 }
@@ -197,24 +197,24 @@ body {
 
 .wa {
     text-align: center;
-    font-size: 70px;
+    font-size: 50px;
     height: 200px;
     width: 100%;
-   background-color: white;
+    background-color: rgb(255, 187, 0);
     display: block;
 }
 
 .ra {
     text-align: center;
-    font-size: 70px;
+    font-size: 50px;
     height: 200px;
     width: 100%;
-    background-color: white;
+    background-color: rgb(255, 187, 0);
     display: none;
 }
 .qmScore {
     text-align: center;
-    font-size: 70px;
+    font-size: 50px;
     height: 200px;
     width: 100%;
     background-color: rgb(3, 255, 116);
