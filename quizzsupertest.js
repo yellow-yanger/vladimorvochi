@@ -583,7 +583,7 @@ document.addEventListener('DOMContentLoaded', function () {
             
             pointsCounter++; 
             qmScore.textContent = pointsCounter; 
-            if(pointsCounter>=10){
+              if(pointsCounter>=10){
                 qmScore.textContent="nice start 10+";
             } 
 
@@ -598,9 +598,28 @@ document.addEventListener('DOMContentLoaded', function () {
             if(pointsCounter>=30) {
                 qmScore.textContent="good JOB 30+";
             }
+            if(pointsCounter>=40) {
+                qmScore.textContent="much better 40+";
+            }
+            if(pointsCounter>=50) {
+                qmScore.textContent="you are a monster 50+";
+            }
+            if(pointsCounter>=60) {
+                qmScore.textContent="be calm... 60+";
+            }
+            if(pointsCounter>=70) {
+                qmScore.textContent="I mean keep CALM! 70+";
+            }
+            if(pointsCounter>=80) {
+                qmScore.textContent="I mean seriously...you need to stop 80+";
+            }
             if(pointsCounter>=100){
-                qmScore.textContent="just...relax bro...";
+                qmScore.textContent="just...relax bro... 90+";
             } 
+            if(pointsCounter>=100) {
+                qmScore.textContent="GO PLAY ROBLOX";
+            }
+           
             openerquizz(wa1, wa2, wa3, wa4, ra1, ra2, ra3, ra4, qmTense);
         });
     });
