@@ -3,18 +3,21 @@
     background-color: rgb(255, 242, 197);
     height: 30%;
     width: 100%;
+    text-align: center;
 }
 
 .div_advices {
     background-color: rgb(255, 242, 197);
     height: 30%;
     width: 100%;
+    text-align: center;
 }
 
 .div_quizz {
     background-color: rgb(255, 242, 197);
     height: 30%;
     width: 100%;
+    text-align: center;
 }
 
 .div_background {
@@ -178,7 +181,7 @@ body {
 
 .qmTense {
     text-align: center;
-    font-size: 50px;
+    font-size: 30px;
     height: 200px;
     width: 100%;
     background-color: rgb(233, 255, 183);
@@ -197,8 +200,8 @@ body {
 
 .wa {
     text-align: center;
-    font-size: 50px;
-    height: 200px;
+    font-size: 30px;
+    height: 100px;
     width: 100%;
     background-color: rgb(255, 248, 228);
     display: block;
@@ -206,16 +209,16 @@ body {
 
 .ra {
     text-align: center;
-    font-size: 50px;
-    height: 200px;
+    font-size: 30px;
+    height: 100px;
     width: 100%;
     background-color: rgb(255, 248, 228);
     display: none;
 }
 .qmScore {
     text-align: center;
-    font-size: 50px;
-    height: 200px;
+    font-size: 30px;
+    height: 100px;
     width: 100%;
     background-color: rgb(233, 255, 183);
 }
