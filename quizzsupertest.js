@@ -179,10 +179,6 @@ function openerquizz(wa1, wa2, wa3, wa4, ra1, ra2, ra3, ra4, qmTense) {
            Vpresent = verbjson [randomVerb] [4]
         } else { Vpresent = verbjson [randomVerb] [0]}
 
-
-
-
-
     const fakePastCntFormula1 = `${S} ${BePast} ${V1}`
     const fakePastCntFormula2 = `${S} ${Ving}`
     const fakePastCntFormula3 = `${S} ${BePast} ${V1}`
@@ -583,7 +579,7 @@ document.addEventListener('DOMContentLoaded', function () {
             
             pointsCounter++; 
             qmScore.textContent = pointsCounter; 
-              if(pointsCounter>=10){
+            if(pointsCounter>=10){
                 qmScore.textContent="nice start 10+";
             } 
 
@@ -624,7 +620,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-
     mainWa.forEach(function(wa){
     
         qmScore.textContent = pointsCounter;
@@ -635,11 +630,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     })
-
-
-
-
-
 
     openerquizz(wa1, wa2, wa3, wa4, ra1, ra2, ra3, ra4, qmTense);
 
@@ -652,9 +642,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
-
-
-
-
-
-

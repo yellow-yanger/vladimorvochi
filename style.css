@@ -15,7 +15,7 @@
 
 .div_quizz {
     background-color: rgb(255, 242, 197);
-    height: 30%;
+    height: 100px;
     width: 100%;
     text-align: center;
 }
@@ -181,7 +181,7 @@ body {
 
 .qmTense {
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     height: 200px;
     width: 100%;
     background-color: rgb(233, 255, 183);

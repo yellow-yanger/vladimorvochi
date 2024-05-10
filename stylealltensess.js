@@ -140,7 +140,6 @@ let  subjectsjson = [
     const pastcontinuousformulaq =`${Bepast} ${S} ${Ving} ?`;
     const pastcontinuousformulan =`${S} ${Bepast} NOT ${Ving}`;
 
-
     const presentcontinuousformula = `${S} ${Bepresent} ${Ving}`;
     const presentcontinuousformulaq =`${Bepresent} ${S} ${Ving} ?`;
     const presentcontinuousformulan =`${S} ${Bepresent} NOT ${Ving}`;
@@ -187,23 +186,11 @@ let  subjectsjson = [
     futureSimpleQ.textContent = futuresimpleformulaq;
     futureSimpleN.textContent = futuresimpleformulan;
 
-    // qmTense.textContent = presentcontinuousformula;
 
+    // qmTense.textContent = presentcontinuousformula;
     // оххх варианты пошли
   
-    
-
-
-  
-  
   }
-
-
-
-
-  
-  
-  
   select.addEventListener('change', updateResult);
   select1.addEventListener('change', updateResult);
   
