@@ -121,14 +121,14 @@ function getRandomNumber(min, max) {
 function openerquizz(wa1, wa2, wa3, wa4, ra1, ra2, ra3, ra4, qmTense) {
 
     const randomNumber = getRandomNumber(1, 4);
-    const randomQuestion = getRandomNumber(1, 8);
+    const randomQuestion = getRandomNumber(1, 24);
     const randomSubject = getRandomNumber(0, 18);
     const randomVerb = getRandomNumber(0, 42);
     const randomTime = getRandomNumber(0, 4);
     const randomTimeFORcontinuous = getRandomNumber(0, 6);
     const randomTimeFORpresentSimple = getRandomNumber(0, timezonePresentSimplelength);
-    const timerForHours= getRandomNumber(1, 12);
-  
+    const timerForHours = getRandomNumber(1, 12);
+
 
     //кейсы для варианта ответов
     switch (randomNumber) {
@@ -202,7 +202,7 @@ function openerquizz(wa1, wa2, wa3, wa4, ra1, ra2, ra3, ra4, qmTense) {
     const DontDoesnt = subjectsjson[randomSubject][5];
     const timePast = timezonejson[0][randomTime];
     const timePresent = timezonejson[1][randomTime];
-    const timeFuture = timezonejson [2][randomTime];
+    const timeFuture = timezonejson[2][randomTime];
     const objectCntnVerb = verbjson[randomVerb][6];
     const timePastSpecial = timeContinuous[0][randomTimeFORcontinuous];
     const timePresentSpecial = timeContinuous[1][randomTimeFORcontinuous];
@@ -220,6 +220,188 @@ function openerquizz(wa1, wa2, wa3, wa4, ra1, ra2, ra3, ra4, qmTense) {
         VpresentFake = verbjson[randomVerb][4];
     }
 
+
+    // paaast 
+    // Past Simple Affirmative V (на 1 больше в повторах вопроса)
+    const TenseTextPastSimpleAV = `${S} ____ ${objectCntnVerb} ${timePast}`
+    const WA1pastSimpleAV = `${V1}`
+    const WA2pastSimpleAV = `${Ving}`
+    const WA3pastSimpleAV = `WILL ${V1}`
+    const WA4pastSimpleAV = `${VFake}`
+    const RApastSimpleAV = `${V2}`
+
+    // Past Simple Question V 
+    const TenseTextPastSimpleQV = `DID ${S}____ ${objectCntnVerb} ${timePast}?`
+    const WA1pastSimpleQV = `${V2}`
+    const WA2pastSimpleQV = `${Ving}`
+    const WA3pastSimpleQV = `WILL ${V1}`
+    const WA4pastSimpleQV = `${VFake}`
+    const RApastSimpleQV = `${V1}`
+
+    // Past Simple Negative V 
+    const TenseTextPastSimpleNV = `${S} DID NOT ____ ${objectCntnVerb} ${timePast}`
+    const WA1pastSimpleNV = `${V2}`
+    const WA2pastSimpleNV = `${Ving}`
+    const WA3pastSimpleNV = `WILL ${V1}`
+    const WA4pastSimpleNV = `${VFake}`
+    const RApastSimpleNV = `${V1}`
+
+    // Past Simple question DV
+    const TenseTextPastSimpleDVQ = `_____${objectCntnVerb} ${timePast} ?`
+    const WA1pastSimpleDVQ = `${S} DID ${V1}`
+    const WA2pastSimpleDVQ = `DID ${S} ${V2}`
+    const WA3pastSimpleDVQ = `DID ${S} ${Ving}`
+    const WA4pastSimpleDVQ = `${S} ${V2}`
+    const RApastSimpleDVQ = `DID ${S} ${V1}`
+
+    // Past Simple negative DV
+    const TenseTextPastSimpleDV = `_____${objectCntnVerb} ${timePast}`
+    const WA1pastSimpleDVN = `${S} DID NOT ${V2}`
+    const WA2pastSimpleDVN = `DID ${S} NOT ${V1}`
+    const WA3pastSimpleDVN = `DID ${S} ${V1}`
+    const WA4pastSimpleDVN = `${S} DID NOT ${Ving}`
+    const RApastSimpleDVN = `${S} DID NOT ${V1}`
+
+    // Past Simple  
+    const TenseTextPastSimple = `affirmative`
+    const WA1pastSimple = `${S} ${V1} ${objectCntnVerb} ${timePast}`
+    const WA2pastSimple = `${S} DID ${V1} ${objectCntnVerb} ${timePast}`
+    const WA3pastSimple = `${S} ${Vpresent} ${objectCntnVerb} ${timePast}`
+    const WA4pastSimple = `${S} ${V2} ${objectCntnVerb} ${timePresentSpecial}`
+    const RApastSimple = `${S} ${V2} ${objectCntnVerb} ${timePast}`
+
+    // Past Simple question
+    const TenseTextPastSimpleQ = `question`
+    const WA1pastSimpleQ = `${S} ${V1} ${objectCntnVerb} ${timePast} ?`
+    const WA2pastSimpleQ = `${S} DID ${V2} ${objectCntnVerb} ${timePast} ?`
+    const WA3pastSimpleQ = `${S} DID ${Ving} ${objectCntnVerb} ${timePast} ?`
+    const WA4pastSimpleQ = `DID ${S} ${V1} ${objectCntnVerb} ${timePresentSpecial} ?`
+    const RApastSimpleQ = `DID ${S} ${V1} ${objectCntnVerb} ${timePast} ?`
+
+    // Past Simple negative 
+    const TenseTextPastSimpleN = `negative`
+    const WA1pastSimpleN = `DID ${S} NOT  ${V1} ${objectCntnVerb} ${timePast}`
+    const WA2pastSimpleN = `${S} DID NOT ${V2} ${objectCntnVerb} ${timePast}`
+    const WA3pastSimpleN = `${S} NOT ${V1} ${objectCntnVerb} ${timePast}`
+    const WA4pastSimpleN = `${S} DID NOT ${V1} ${objectCntnVerb} ${timePresentSpecial}`
+    const RApastSimpleN = `${S} DID NOT ${V1} ${objectCntnVerb} ${timePast}`
+    //условия для особенных вариантов вопроса
+
+    // Past Simple TPA
+    const TenseTextPastSimpleTPA = `${S} ${V2} ${objectCntnVerb} _____`
+    const WA1pastSimpleTPA = ` ${timePresentSpecial}`
+    const WA2pastSimpleTPA = `${timeFuture}`
+    const WA3pastSimpleTPA = `${timeFutureSpecial}`
+    const WA4pastSimpleTPA = `${timePastSpecial} ${timePast}`
+    const RApastSimpleTPA = `${timePast}`
+
+    // Past Simple TPQ
+    const TenseTextPastSimpleTPQ = `DID ${S} ${V1} ${objectCntnVerb} _____?`
+    const WA1pastSimpleTPQ = ` ${timePresentSpecial}`
+    const WA2pastSimpleTPQ = `${timeFuture}`
+    const WA3pastSimpleTPQ = `${timeFutureSpecial}`
+    const WA4pastSimpleTPQ = `${timePastSpecial} ${timePast}`
+    const RApastSimpleTPQ = `${timePast}`
+
+    // PAst Simple TPN
+    const TenseTextPastSimpleTPN = `${S} DID NOT ${V1} ${objectCntnVerb} _____`
+    const WA1pastSimpleTPN = ` ${timePresentSpecial}`
+    const WA2pastSimpleTPN = `${timeFuture}`
+    const WA3pastSimpleTPN = `${timeFutureSpecial}`
+    const WA4pastSimpleTPN = `${timePastSpecial} ${timePast}`
+    const RApastSimpleTPN = `${timePast}`
+
+
+
+    //present simple 
+
+    // Present Simple V
+    const TenseTextPresentSimpleVA = `${S} ___${objectCntnVerb} ${timePresentSimple}`
+    const WA1presentSimpleVA = `${VpresentFake}`
+    const WA2presentSimpleVA = `${Ving}`
+    const WA3presentSimpleVA = `${V3}`
+    const WA4presentSimpleVA = `${V2}`
+    const RApresentSimpleVA = `${Vpresent}`
+
+    // Present Simple question
+    const TenseTextPresentSimpleQ = `____ ${objectCntnVerb} ${timePresentSimple} ?`
+    const WA1presentSimpleQ = `${S} ${DoDoes} ${V1}`
+    const WA2presentSimpleQ = `${DoDoesFake} ${S} ${V1}`
+    const WA3presentSimpleQ = `${S} ${DoDoesFake} ${V1}`
+    const WA4presentSimpleQ = `${S} ${Vpresent}`
+    const RApresentSimpleQ = `${DoDoes} ${S} ${V1}`
+
+
+    // Present Simple negative 
+    const TenseTextPresentSimpleN = `negative`
+    const WA1presentSimpleN = `${S} ${DoDoesFake} NOT ${V1} ${objectCntnVerb} ${timePresentSimple}`
+    const WA2presentSimpleN = `${S} NOT ${V1} ${objectCntnVerb} ${timePresentSimple}`
+    const WA3presentSimpleN = `${S} ${DoDoes} NOT ${Ving} ${objectCntnVerb} ${timePresentSimple}`
+    const WA4presentSimpleN = `${S} ${DoDoesFake} ${Ving} ${objectCntnVerb} ${timePresentSimple}`
+    const RApresentSimpleN = `${S} ${DoDoes} NOT ${V1} ${objectCntnVerb} ${timePresentSimple}`
+
+
+    // Present Simple Affirmative 
+    const TenseTextPresentSimpleA = `Affirmative`
+    const WA1presentSimpleA = `${S} ${VpresentFake} ${objectCntnVerb} ${timePresentSpecial}`
+    const WA2presentSimpleA = `${S} ${VpresentFake} ${objectCntnVerb} ${timePresentSimple}`
+    const WA3presentSimpleA = `${S} ${Vpresent} ${objectCntnVerb} ${timePresentSpecial}`
+    const WA4presentSimpleA = `${S} ${Vpresent} ${objectCntnVerb} ${timePast}`
+    const RApresentSimpleA = `${S} ${Vpresent} ${objectCntnVerb} ${timePresentSimple}`
+
+
+    // Present Simple Question TimePeaker
+    const TenseTextPresentSimpleTPQ = `${DoDoes} ${S} ${V1} ${objectCntnVerb} _____?`
+    const WA1presentSimpleTPQ = ` ${timePresentSpecial}`
+    const WA2presentSimpleTPQ = `${timePast}`
+    const WA3presentSimpleTPQ = `${timeFutureSpecial}`
+    const WA4presentSimpleTPQ = `${timePastSpecial} ${timePast}`
+    const RApresentSimpleTPQ = `${timePresent}`
+
+
+    // Present Simple VQ
+    const TenseTextPresentSimpleVQ = `${DoDoes} ${S} ___ ${objectCntnVerb} ${timePresentSimple} ?` //дебил тут и так ответ
+    const WA1presentSimpleVQ = `${V3}`
+    const WA2presentSimpleVQ = `${Ving}`
+    const WA3presentSimpleVQ = `${VFake}`
+    const WA4presentSimpleVQ = `${V2}`
+    const RApresentSimpleVQ = `${V1}`
+
+
+    // Present Simple VN
+    const TenseTextPresentSimpleVN = `${S} ____ (NOT/${V1}) ${objectCntnVerb} ${timePresentSimple}`
+    const WA1presentSimpleVN = `${DoDoesFake} NOT ${V1}`
+    const WA2presentSimpleVN = `${DoDoes} NOT ${Ving}`
+    const WA3presentSimpleVN = `WILL NOT ${V1}`
+    const WA4presentSimpleVN = `${DoDoes} NOT ${V2}`
+    const RApresentSimpleVN = `${DoDoes} NOT ${V1}`
+
+
+    // Present Simple Do/Does
+    const TenseTextPresentSimpleDQ = `_____ ${S} ${V1} ${objectCntnVerb} ${timePresentSimple} ?` //дебил тут и так ответ
+    const WA1presentSimpleDQ = `${DoDoesFake}`
+    const WA2presentSimpleDQ = `${BePresentFake}`
+    const WA3presentSimpleDQ = `WILL`
+    const WA4presentSimpleDQ = `${BePast}`
+    const RApresentSimpleDA = `${DoDoes}`
+
+
+    // Present Simle Affirmative Time Picker
+    const TenseTextPresentSimpleTPA = `${S} ${Vpresent} ${objectCntnVerb} _____`
+    const WA1presentSimpleTPA = ` ${timePresentSpecial}`
+    const WA2presentSimpleTPA = `${timePast}`
+    const WA3presentSimpleTPA = `${timeFutureSpecial}`
+    const WA4presentSimpleTPA = `${timePastSpecial} ${timePast}`
+    const RApresentSimpleTPA = `${timePresent}`
+
+
+    // Present Simple Negative Time Picker
+    const TenseTextPresentSimpleTPN = `${S} ${DontDoesnt} ${V1} ${objectCntnVerb} _____`
+    const WA1presentSimpleTPN = ` ${timePresentSpecial}`
+    const WA2presentSimpleTPN = `${timePast}`
+    const WA3presentSimpleTPN = `${timeFutureSpecial}`
+    const WA4presentSimpleTPN = `${timePastSpecial} ${timePast}`
+    const RApresentSimpleTPN = `${timePresent}`
 
 
 
@@ -244,13 +426,14 @@ function openerquizz(wa1, wa2, wa3, wa4, ra1, ra2, ra3, ra4, qmTense) {
 
     // Present
 
+
     // Future Simple V
     const TenseTextFutureSimpleVA = `${S} ___${objectCntnVerb} ${timeFuture}`
-    const WA1futureFSimpleVA = `WILL BE ${V1}`
-    const WA2futureSimpleVA  = `WILL ${Ving}`
-    const WA3futureSimpleVA  = `WILL ${V1}`
-    const WA4futureSimpleVA  = `WILL ${V2}`
-    const RAfutureSimpleVA   = `WILL ${V1}`
+    const WA1futureFSimpleVA = `${V1}`
+    const WA2futureSimpleVA = `WAS ${Ving}`
+    const WA3futureSimpleVA = `${V1}`
+    const WA4futureSimpleVA = `${V2}`
+    const RAfutureSimpleVA = `WILL ${V1}`
 
     // Future Simple question
     const TenseTextFutureSimpleQ = `____ ${objectCntnVerb} ${timeFuture} ?`
@@ -472,6 +655,269 @@ function openerquizz(wa1, wa2, wa3, wa4, ra1, ra2, ra3, ra4, qmTense) {
             ra3.textContent = RAfutureSimpleTPN;
             ra4.textContent = RAfutureSimpleTPN;
             break;
+        case 9:
+            qmTense.textContent = TenseTextPastSimpleAV;
+            wa1.textContent = WA1pastSimpleAV;
+            wa2.textContent = WA2pastSimpleAV;
+            wa3.textContent = WA3pastSimpleAV;
+            wa4.textContent = WA4pastSimpleAV;
+
+            ra1.textContent = RApastSimpleAV;
+            ra2.textContent = RApastSimpleAV;
+            ra3.textContent = RApastSimpleAV;
+            ra4.textContent = RApastSimpleAV;
+            break;
+        case 10:
+            qmTense.textContent = TenseTextPastSimpleQV;
+            wa1.textContent = WA1pastSimpleQV;
+            wa2.textContent = WA2pastSimpleQV;
+            wa3.textContent = WA3pastSimpleQV;
+            wa4.textContent = WA4pastSimpleQV;
+
+            ra1.textContent = RApastSimpleQV;
+            ra2.textContent = RApastSimpleQV;
+            ra3.textContent = RApastSimpleQV;
+            ra4.textContent = RApastSimpleQV;
+            break;
+        case 11:
+            qmTense.textContent = TenseTextPastSimpleNV;
+            wa1.textContent = WA1pastSimpleNV;
+            wa2.textContent = WA2pastSimpleNV;
+            wa3.textContent = WA3pastSimpleNV;
+            wa4.textContent = WA4pastSimpleNV;
+
+            ra1.textContent = RApastSimpleNV;
+            ra2.textContent = RApastSimpleNV;
+            ra3.textContent = RApastSimpleNV;
+            ra4.textContent = RApastSimpleNV;
+            break;
+        case 12:
+            qmTense.textContent = TenseTextPastSimpleDVQ;
+            wa1.textContent = WA1pastSimpleDVQ;
+            wa2.textContent = WA2pastSimpleDVQ;
+            wa3.textContent = WA3pastSimpleDVQ;
+            wa4.textContent = WA4pastSimpleDVQ;
+
+            ra1.textContent = RApastSimpleDVQ;
+            ra2.textContent = RApastSimpleDVQ;
+            ra3.textContent = RApastSimpleDVQ;
+            ra4.textContent = RApastSimpleDVQ;
+            break;
+        case 13:
+            qmTense.textContent = TenseTextPastSimpleDV;
+            wa1.textContent = WA1pastSimpleDVN;
+            wa2.textContent = WA2pastSimpleDVN;
+            wa3.textContent = WA3pastSimpleDVN;
+            wa4.textContent = WA4pastSimpleDVN;
+
+            ra1.textContent = RApastSimpleDVN;
+            ra2.textContent = RApastSimpleDVN;
+            ra3.textContent = RApastSimpleDVN;
+            ra4.textContent = RApastSimpleDVN;
+            break;
+        case 14:
+            qmTense.textContent = TenseTextPastSimple;
+            wa1.textContent = WA1pastSimple;
+            wa2.textContent = WA2pastSimple;
+            wa3.textContent = WA3pastSimple;
+            wa4.textContent = WA4pastSimple;
+
+            ra1.textContent = RApastSimple;
+            ra2.textContent = RApastSimple;
+            ra3.textContent = RApastSimple;
+            ra4.textContent = RApastSimple;
+            break;
+        case 15:
+            qmTense.textContent = TenseTextPastSimpleQ;
+            wa1.textContent = WA1pastSimpleQ;
+            wa2.textContent = WA2pastSimpleQ;
+            wa3.textContent = WA3pastSimpleQ;
+            wa4.textContent = WA4pastSimpleQ;
+
+            ra1.textContent = RApastSimpleQ;
+            ra2.textContent = RApastSimpleQ;
+            ra3.textContent = RApastSimpleQ;
+            ra4.textContent = RApastSimpleQ;
+            break;
+        case 16:
+            qmTense.textContent = TenseTextPastSimpleN;
+            wa1.textContent = WA1pastSimpleN;
+            wa2.textContent = WA2pastSimpleN;
+            wa3.textContent = WA3pastSimpleN;
+            wa4.textContent = WA4pastSimpleN;
+
+            ra1.textContent = RApastSimpleN;
+            ra2.textContent = RApastSimpleN;
+            ra3.textContent = RApastSimpleN;
+            ra4.textContent = RApastSimpleN;
+            break;
+        case 17:
+            qmTense.textContent = TenseTextPastSimpleTPA;
+            wa1.textContent = WA1pastSimpleTPA;
+            wa2.textContent = WA2pastSimpleTPA;
+            wa3.textContent = WA3pastSimpleTPA;
+            wa4.textContent = WA4pastSimpleTPA;
+
+            ra1.textContent = RApastSimpleTPA;
+            ra2.textContent = RApastSimpleTPA;
+            ra3.textContent = RApastSimpleTPA;
+            ra4.textContent = RApastSimpleTPA;
+            break;
+        case 18:
+            qmTense.textContent = TenseTextPastSimpleTPQ;
+            wa1.textContent = WA1pastSimpleTPQ;
+            wa2.textContent = WA2pastSimpleTPQ;
+            wa3.textContent = WA3pastSimpleTPQ;
+            wa4.textContent = WA4pastSimpleTPQ;
+
+            ra1.textContent = RApastSimpleTPQ;
+            ra2.textContent = RApastSimpleTPQ;
+            ra3.textContent = RApastSimpleTPQ;
+            ra4.textContent = RApastSimpleTPQ;
+            break;
+        case 19:
+            qmTense.textContent = TenseTextPastSimpleTPN;
+            wa1.textContent = WA1pastSimpleTPN;
+            wa2.textContent = WA2pastSimpleTPN;
+            wa3.textContent = WA3pastSimpleTPN;
+            wa4.textContent = WA4pastSimpleTPN;
+
+            ra1.textContent = RApastSimpleTPN;
+            ra2.textContent = RApastSimpleTPN;
+            ra3.textContent = RApastSimpleTPN;
+            ra4.textContent = RApastSimpleTPN;
+            break;
+        case 20:
+            qmTense.textContent = TenseTextPresentSimpleVA;
+            wa1.textContent = WA1presentSimpleVA;
+            wa2.textContent = WA2presentSimpleVA;
+            wa3.textContent = WA3presentSimpleVA;
+            wa4.textContent = WA4presentSimpleVA;
+
+            ra1.textContent = RApresentSimpleVA;
+            ra2.textContent = RApresentSimpleVA;
+            ra3.textContent = RApresentSimpleVA;
+            ra4.textContent = RApresentSimpleVA;
+            break;
+        case 21:
+            qmTense.textContent = TenseTextPresentSimpleQ;
+            wa1.textContent = WA1presentSimpleQ;
+            wa2.textContent = WA2presentSimpleQ;
+            wa3.textContent = WA3presentSimpleQ;
+            wa4.textContent = WA4presentSimpleQ;
+
+            ra1.textContent = RApresentSimpleQ;
+            ra2.textContent = RApresentSimpleQ;
+            ra3.textContent = RApresentSimpleQ;
+            ra4.textContent = RApresentSimpleQ;
+            break;
+        case 22:
+            qmTense.textContent = TenseTextPresentSimpleN;
+            wa1.textContent = WA1presentSimpleN;
+            wa2.textContent = WA2presentSimpleN;
+            wa3.textContent = WA3presentSimpleN;
+            wa4.textContent = WA4presentSimpleN;
+
+            ra1.textContent = RApresentSimpleN;
+            ra2.textContent = RApresentSimpleN;
+            ra3.textContent = RApresentSimpleN;
+            ra4.textContent = RApresentSimpleN;
+            break;
+        case 23:
+            qmTense.textContent = TenseTextPresentSimpleA;
+            wa1.textContent = WA1presentSimpleA;
+            wa2.textContent = WA2presentSimpleA;
+            wa3.textContent = WA3presentSimpleA;
+            wa4.textContent = WA4presentSimpleA;
+
+            ra1.textContent = RApresentSimpleA;
+            ra2.textContent = RApresentSimpleA;
+            ra3.textContent = RApresentSimpleA;
+            ra4.textContent = RApresentSimpleA;
+
+
+            break;
+        case 24:
+            //present simple question Time picker 
+            qmTense.textContent = TenseTextPresentSimpleTPQ;
+            wa1.textContent = WA1presentSimpleTPQ;
+            wa2.textContent = WA2presentSimpleTPQ;
+            wa3.textContent = WA3presentSimpleTPQ;
+            wa4.textContent = WA4presentSimpleTPQ;
+
+            ra1.textContent = RApresentSimpleTPQ;
+            ra2.textContent = RApresentSimpleTPQ;
+            ra3.textContent = RApresentSimpleTPQ;
+            ra4.textContent = RApresentSimpleTPQ;
+            break;
+
+        case 25:
+            //present simple question Time picker 
+            qmTense.textContent = TenseTextPresentSimpleVQ;
+            wa1.textContent = WA1presentSimpleVQ;
+            wa2.textContent = WA2presentSimpleVQ;
+            wa3.textContent = WA3presentSimpleVQ;
+            wa4.textContent = WA4presentSimpleVQ;
+
+            ra1.textContent = RApresentSimpleVQ;
+            ra2.textContent = RApresentSimpleVQ;
+            ra3.textContent = RApresentSimpleVQ;
+            ra4.textContent = RApresentSimpleVQ;
+
+            break;
+
+        case 26:
+            //present simple question Time picker 
+            qmTense.textContent = TenseTextPresentSimpleVN;
+            wa1.textContent = WA1presentSimpleVN;
+            wa2.textContent = WA2presentSimpleVN;
+            wa3.textContent = WA3presentSimpleVN;
+            wa4.textContent = WA4presentSimpleVN;
+
+            ra1.textContent = RApresentSimpleVN;
+            ra2.textContent = RApresentSimpleVN;
+            ra3.textContent = RApresentSimpleVN;
+            ra4.textContent = RApresentSimpleVN;
+            break;
+
+        case 27:
+            qmTense.textContent = TenseTextPresentSimpleDQ;
+            wa1.textContent = WA1presentSimpleDQ;
+            wa2.textContent = WA2presentSimpleDQ;
+            wa3.textContent = WA3presentSimpleDQ;
+            wa4.textContent = WA4presentSimpleDQ;
+
+            ra1.textContent = RApresentSimpleDA;
+            ra2.textContent = RApresentSimpleDA;
+            ra3.textContent = RApresentSimpleDA;
+            ra4.textContent = RApresentSimpleDA;
+            break;
+
+        case 28:
+            qmTense.textContent = TenseTextPresentSimpleTPA;
+            wa1.textContent = WA1presentSimpleTPA;
+            wa2.textContent = WA2presentSimpleTPA;
+            wa3.textContent = WA3presentSimpleTPA;
+            wa4.textContent = WA4presentSimpleTPA;
+
+            ra1.textContent = RApresentSimpleTPA;
+            ra2.textContent = RApresentSimpleTPA;
+            ra3.textContent = RApresentSimpleTPA;
+            ra4.textContent = RApresentSimpleTPA;
+            break;
+        case 29:
+            qmTense.textContent = TenseTextPresentSimpleTPN;
+            wa1.textContent = WA1presentSimpleTPN;
+            wa2.textContent = WA2presentSimpleTPN;
+            wa3.textContent = WA3presentSimpleTPN;
+            wa4.textContent = WA4presentSimpleTPN;
+
+            ra1.textContent = RApresentSimpleTPN;
+            ra2.textContent = RApresentSimpleTPN;
+            ra3.textContent = RApresentSimpleTPN;
+            ra4.textContent = RApresentSimpleTPN;
+            break;
+
     }
 
 
