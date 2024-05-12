@@ -248,7 +248,7 @@ function openerquizz(wa1, wa2, wa3, wa4, ra1, ra2, ra3, ra4, qmTense) {
     const TenseTextFutureSimpleVA = `${S} ___${objectCntnVerb} ${timeFuture}`
     const WA1futureFSimpleVA = `WILL BE ${V1}`
     const WA2futureSimpleVA  = `WILL ${Ving}`
-    const WA3futureSimpleVA  = `WILL ${V1}`
+    const WA3futureSimpleVA  = `WILL ${V3}`
     const WA4futureSimpleVA  = `WILL ${V2}`
     const RAfutureSimpleVA   = `WILL ${V1}`
 
