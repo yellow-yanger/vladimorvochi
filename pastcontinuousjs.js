@@ -14,7 +14,7 @@ let subjectsjson = [
     ["MANAGER", "WAS", "IS", "WILL BE", "DOES", "DOESN'T", "МЕНЕДЖЕР", "WERE", "ARE"],
     ["ACTOR", "WAS", "IS", "WILL BE", "DOES", "DOESN'T", "АКТЕР", "WERE", "ARE"],
     ["ACTRESS", "WAS", "IS", "WILL BE", "DOES", "DOESN'T", "АКТРИСА", "WERE", "ARE"],
-    ["SOLDER", "WAS", "IS", "WILL BE", "DOES", "DOESN'T", "СОЛДАТ", "WERE", "ARE"],
+    ["SOLDIER", "WAS", "IS", "WILL BE", "DOES", "DOESN'T", "СОЛДАТ", "WERE", "ARE"],
     ["TEACHER", "WAS", "IS", "WILL BE", "DOES", "DOESN'T", "УЧИТЕЛЬ", "WERE", "ARE" ],
     ["CHILD", "WAS", "IS", "WILL BE", "DOES", "DOESN'T", "РЕБЕНОК", "WERE", "ARE"],
     ["CHILDREN", "WERE", "ARE", "WILL BE", "DO", "DON'T", "ДЕТИ", "WAS", "IS"]
@@ -35,7 +35,7 @@ let verbjson = [
     ["TAKE", "TOOK", "TAKEN", "TAKING", "TAKES", "брать", "A SHOWER"],
     ["GIVE", "GAVE", "GIVEN", "GIVING", "GIVES", "давать", "MONEY"],
     ["FIND", "FOUND", "FOUND", "FINDING", "FINDS", "находить", "BOOKS"],
-    ["TELL", "TOLD", "TOLD", "TELLING", "TELLS", "говорить", "THE TRUE"],
+    ["TELL", "TOLD", "TOLD", "TELLING", "TELLS", "говорить", "THE TRUTH"],
     ["WORK", "WORKED", "WORKED", "WORKING", "WORKS", "работать", "CAREFULLY"],
     ["CALL", "CALLED", "CALLED", "CALLING", "CALLS", "звонить", "MY FATHER"],
     ["TRY", "TRIED", "TRIED", "TRYING", "TRIES", "пытаться", "TO WIN"],
